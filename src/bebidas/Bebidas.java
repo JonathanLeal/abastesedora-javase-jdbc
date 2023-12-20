@@ -92,7 +92,7 @@ public class Bebidas {
         Conexion conexion = new Conexion();
         PreparedStatement insertVenta = conexion.con.prepareStatement("insert into venta(cliente,idProducto,cantidad,totalProducto) values(?,?,?,?)");
         PreparedStatement updateProducto = conexion.con.prepareStatement("update productos set existencia=? where id=?");
-        int opc = 0;
+        int opcl = 0;
         try {
             do {
                 String cliente = JOptionPane.showInputDialog("ingrese su nombre");
@@ -127,9 +127,9 @@ public class Bebidas {
                 
                 JOptionPane.showMessageDialog(null, "Compra realizada con exito");
                 
-                opc = Integer.parseInt(JOptionPane.showInputDialog("1. Salir\n"+ "0. Para seguir comprando"));
+                opcl = Integer.parseInt(JOptionPane.showInputDialog("1. Salir\n"+ "0. Para seguir comprando"));
                 
-            } while (opc != 1);
+            } while (opcl != 1);
         } catch (Exception e) {
             System.out.println("error al hacer la venta: "+e.getMessage());
         }
